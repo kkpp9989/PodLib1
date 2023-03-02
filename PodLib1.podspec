@@ -11,7 +11,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PodLib1'
-  s.version          = '0.0.1'
+  s.version          = '0.0.3'
   s.summary          = 'Test my POD PodLib1.'
 
 # This description is used to generate tags and improve search results.
@@ -36,8 +36,8 @@ Pod::Spec.new do |s|
 
   # s.source_files = 'AmityFramework/uikit.zip'
   # s.source = { :http => 'https://sdk.amity.co/sdk-release/ios-uikit/2.34.3/uikit.zip'}
-  s.vendored_frameworks = 'AmityFramework/AmityUIKit.xcframework'
-  # s.preserve_path = 'Frameworks/*'
+  # s.preserve_path = 'AmityFramework/*'
+  s.ios.vendored_frameworks = 'AmityFramework/AmitySDK.xcframework', 'AmityFramework/AmityUIKit.xcframework'
 
   # s.resource_bundles = {
   #   'KKPodLib1' => ['KKPodLib1/Assets/*.png']
