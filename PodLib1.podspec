@@ -7,10 +7,11 @@
 #
 # KK 
 # pod lib lint --swift-version=5.0
+# pod trunk push --swift-version=5.0
 
 Pod::Spec.new do |s|
   s.name             = 'PodLib1'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'Test my POD PodLib1.'
 
 # This description is used to generate tags and improve search results.
@@ -28,15 +29,21 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/kkpp9989/PodLib1.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '12.0'
+  s.swift_version = '5.0'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5' }
 
-  s.source_files = 'PodLib1/*.swift'
-  
+
+  # s.source_files = 'AmityFramework/uikit.zip'
+  # s.source = { :http => 'https://sdk.amity.co/sdk-release/ios-uikit/2.34.3/uikit.zip'}
+  s.vendored_frameworks = 'AmityFramework/AmityUIKit.xcframework'
+  # s.preserve_path = 'Frameworks/*'
+
   # s.resource_bundles = {
   #   'KKPodLib1' => ['KKPodLib1/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Realm', '~> 10.26.0'
 end
